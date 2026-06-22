@@ -1,0 +1,37 @@
+name: Testes E2E Cypress
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+jobs:
+  testes:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Instalar dependências
+        run: npm ci
+
+      - name: Instalar Cypress
+        run: npx cypress install
+
+      - name: Executar testes
+        run: npm test
+
+      - name: Upload relatório
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: cypress-report
+          path: |
+            test-results/
+          retention-days: 15
