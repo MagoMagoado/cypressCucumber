@@ -1,0 +1,42 @@
+{
+  "name": "automation-pw",
+  "version": "1.0.0",
+  "description": "Automated tests - Playwright",
+  "scripts": {
+    "test": "npx bddgen && npx playwright test",
+    "test:headed": "npx bddgen && npx playwright test --headed",
+    "test:debug": "npx bddgen && npx playwright test --debug",
+    "test:ui": "npx bddgen && npx playwright test --ui",
+    "report": "npx playwright show-report",
+    "clean": "rimraf test-results playwright-report .features-gen",
+    "pretest": "npm run clean"
+  },
+  "keywords": [
+    "playwright",
+    "typescript",
+    "playwright-bdd",
+    "bdd",
+    "automation",
+    "testing"
+  ],
+  "devDependencies": {
+    "@playwright/test": "1.56.1",
+    "@types/node": "^20.19.24",
+    "playwright-bdd": "8.4.1",
+    "rimraf": "^5.0.5",
+    "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.5.4"
+  },
+  "dependencies": {
+  },
+  "overrides": {
+    "glob": "^10.4.0",
+    "uuid": "^9.0.1",
+    "reflect-metadata": "^0.2.2"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  }
+}
