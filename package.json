@@ -1,4 +1,9 @@
 {
+  "cypress-cucumber-preprocessor": {
+    "stepDefinitions": [
+      "cypress/src/steps/**/*.js"
+    ]
+  },
   "devDependencies": {
     "@badeball/cypress-cucumber-preprocessor": "^24.0.1",
     "@bahmutov/cypress-esbuild-preprocessor": "^2.2.8",
