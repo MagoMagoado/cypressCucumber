@@ -1,24 +1,7 @@
 {
-  "name": "automation-cy",
-  "version": "1.0.0",
-  "scripts": {
-    "test": "cypress run",
-    "test:headed": "cypress run --headed",
-    "test:open": "cypress open",
-    "clean": "rimraf cypress/screenshots cypress/videos test-results",
-    "pretest": "npm run clean"
-  },
-  "cypress-cucumber-preprocessor": {
-    "nonGlobalStepDefinitions": false,
-    "stepDefinitions": [
-      "src/steps/**/*.js"
-    ]
-  },
   "devDependencies": {
-    "@badeball/cypress-cucumber-preprocessor": "^21.0.0",
-    "@bahmutov/cypress-esbuild-bundler": "^2.0.0",
-    "cypress": "^13.0.0",
-    "esbuild": "^0.21.0",
-    "rimraf": "^5.0.0"
+    "@badeball/cypress-cucumber-preprocessor": "^24.0.1",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.8",
+    "cypress": "^15.17.0"
   }
 }
