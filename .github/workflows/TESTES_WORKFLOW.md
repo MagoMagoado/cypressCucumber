@@ -30,6 +30,5 @@ Ficam disponíveis na aba **Actions** do repositório no GitHub para download ap
 
 | Artefato | Conteúdo |
 |---|---|
-| `cypress-report` | Relatório HTML/JSON dos testes |
 | `cypress-screenshots` | Prints capturados automaticamente em falhas |
 | `cypress-videos` | Gravações das execuções dos testes |

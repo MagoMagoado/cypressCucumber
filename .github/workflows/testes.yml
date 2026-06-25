@@ -27,29 +27,20 @@ jobs:
       - name: Executar testes
         run: npm test
 
-      - name: Upload relatório
-        uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: cypress-report
-          path: |
-            test-results/
-          retention-days: 15
-
       - name: Upload screenshots
         uses: actions/upload-artifact@v4
-        if: always()
+        if: failure()
         with:
           name: cypress-screenshots
           path: cypress/screenshots
           if-no-files-found: ignore
           retention-days: 15
 
-      - name: Upload videos
-        uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: cypress-videos
-          path: cypress/videos
-          if-no-files-found: ignore
-          retention-days: 15
+      # - name: Upload videos
+      #   uses: actions/upload-artifact@v4
+      #   if: always()
+      #   with:
+      #     name: cypress-videos
+      #     path: cypress/videos
+      #     if-no-files-found: ignore
+      #     retention-days: 15
