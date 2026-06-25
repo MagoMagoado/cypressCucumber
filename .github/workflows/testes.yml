@@ -1,14 +1,13 @@
 name: Testes E2E Cypress
 
 on:
-  # push:
-  #   branches: [main]  # desativado até configurar self-hosted runner
+  push:
+    branches: [main]
   workflow_dispatch:
 
 jobs:
   testes:
-    # runs-on: ubuntu-latest  # IPs de datacenter são bloqueados pelo Cloudflare
-    runs-on: self-hosted  # roda na máquina local, contornando o bloqueio
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
