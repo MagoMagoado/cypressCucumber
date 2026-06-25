@@ -5,7 +5,8 @@
     ]
   },
   "scripts": {
-    "test": "cypress run"
+    "test": "cypress run",
+    "test:ci/cd": "cypress run --env tags='not @local'"
   },
   "devDependencies": {
     "@badeball/cypress-cucumber-preprocessor": "^24.0.1",
