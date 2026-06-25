@@ -4,7 +4,7 @@ Arquivo de configuração: `.github/workflows/testes.yml`
 
 ## Gatilhos
 
-- **Push para `master`** — executa automaticamente a cada novo push na branch master
+- **Push para `main`** — executa automaticamente a cada novo push na branch main
 - **`workflow_dispatch`** — pode ser disparado manualmente pelo botão "Run workflow" na aba Actions do GitHub
 
 ## Job: `testes`
