@@ -3,7 +3,7 @@ const createBundler = require("@bahmutov/cypress-esbuild-preprocessor");
 const addCucumberPreprocessorPlugin = require("@badeball/cypress-cucumber-preprocessor").addCucumberPreprocessorPlugin;
 const createEsbuildPlugin = require("@badeball/cypress-cucumber-preprocessor/esbuild").createEsbuildPlugin;
 module.exports = defineConfig({
-  allowCypressEnv: false, // desabilitado pois não usamos Cypress.env()
+  // allowCypressEnv: false — revertido pois o @badeball/cypress-cucumber-preprocessor usa Cypress.env() internamente para leitura de tags
   viewportWidth: 1440,
   viewportHeight: 900,
   e2e: {
