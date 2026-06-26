@@ -2,12 +2,13 @@ const commonsElementos = {
 
   BOTAO: {
     'Sign in':        { seletor: '[data-test="nav-sign-in"]', texto: 'Sign in', exact: true },
-    'Login':          { seletor: '[data-test="login-submit"]', texto: 'Login', exact: true },
+    'Login':          { seletor: '[value="Login"]', texto: 'Login', exact: true },
     'Contact: Send':  '[data-test="contact-submit"]',
   },
 
   CAMPO: {
-    'Email':                '#email',
+    // 'Email':                '#email',
+    'Email':                '#user-name',
     'Password':             '#password',
     'Contact: First name':  '[data-test="first-name"]',
     'Contact: Last name':   '[data-test="last-name"]',

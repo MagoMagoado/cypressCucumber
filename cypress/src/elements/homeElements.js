@@ -1,16 +1,16 @@
 const homeElementos = {
 
   BOTAO: {
-    'Search':        '[data-test="search-submit"]',
+    'Search': '[data-test="search-submit"]',
     'Limpar Filtro': '.btn-warning',
   },
 
   CAMPO: {
-    'Filtro: Entidade':   '[name="dfEntidade"]',
+    'Filtro: Entidade': '[name="dfEntidade"]',
     'Filtro: By category': { seletor: '#filters h4', texto: 'By category:', exact: true },
-    'Filtro: Search':      '[data-test="search-query"]',
-    'Produto Nome':        { seletor: '[data-test="product-name"]' },
-    'Produto Wood Saw':    { seletor: '.card-body', texto: 'Wood Saw' },
+    'Filtro: Search': '[data-test="search-query"]',
+    'Produto Nome': { seletor: '[data-test="product-name"]' },
+    'Produto Wood Saw': { seletor: '.card-body', texto: 'Wood Saw' },
   },
 
   COMBOBOX: {
@@ -18,7 +18,7 @@ const homeElementos = {
   },
 
   CHECKBOX: {
-    'Filtro: Hammer':   { seletor: 'fieldset .checkbox', texto: 'Hammer',   exact: true },
+    'Filtro: Hammer': { seletor: 'fieldset .checkbox', texto: 'Hammer',   exact: true },
     'Filtro: Hand Saw': { seletor: 'fieldset .checkbox', texto: 'Hand Saw', exact: true },
   },
 

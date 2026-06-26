@@ -7,9 +7,9 @@
       "baseUrl": "..."
     }
   },
-  "HLG": {
+  "saucedemo": {
     "base3": {
-      "baseUrl": "..."
+      "baseUrl": "saucedemo.com"
     }
   }
 }

@@ -1,7 +1,7 @@
 const ambienteInfo = require('./ambienteInfo.json');
 
 const ENVIRONMENT = 'QA';
-const COMPANY_NAC_ID = 'base1';
+const COMPANY_NAC_ID = 'base3';
 const COMPANY_INT_ID = 'base2';
 
 const config = {
