@@ -26,7 +26,7 @@ const commonsElementos = {
     'ALERT':     '.alert',
     'ERRO':      '.bfm-error-message',
     'TÍTULO':    { seletor: '.container h1', exact: false },
-    'SUBTÍTULO': { seletor: '.container h2', exact: false },
+    'SUBTÍTULO': { seletor: 'h2', exact: false },
   },
 
   MENUS_NAVEGACAO: {

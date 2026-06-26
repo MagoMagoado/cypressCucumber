@@ -180,6 +180,16 @@ class CommonsPage {
     this.toLocator(config).scrollIntoView().invoke('text').should('equal', valorEsperado);
   }
 
+  validarVisibilidade(nome, estado) {
+    const config = this.buscarElementoEmQualquerCategoria(nome);
+    const seletor = typeof config === 'string' ? config : config.seletor;
+    if (estado === 'VISIVEL') {
+      cy.get(seletor).should('be.visible');
+    } else {
+      cy.get(seletor).should('not.exist');
+    }
+  }
+
   validarEstado(nome, estado) {
     const config = this.buscarElementoEmQualquerCategoria(nome);
     const locator = this.toLocator(config);

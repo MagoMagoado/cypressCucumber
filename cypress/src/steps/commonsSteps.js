@@ -75,6 +75,11 @@ Then('valido se {string} está {string}', (nome, estado) => {
   context.pageContext.activePage.validarEstado(nome, estado);
 });
 
+Then('valido se {string} está {string} na tela', (nome, estado) => {
+  // estado: VISIVEL ou NAO VISIVEL
+  context.pageContext.activePage.validarVisibilidade(nome, estado);
+});
+
 Then('valido se checkbox {string} está {string}', (nome, estado) => {
   // estado: MARCADO ou DESMARCADO
   context.pageContext.activePage.validarCheckboxEstado(nome, estado);

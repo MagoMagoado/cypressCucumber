@@ -1,6 +1,7 @@
 const { CommonsPage } = require('../pages/commonsPage');
 const { LoginPage } = require('../pages/loginPage');
 const { HomePage } = require('../pages/homePage');
+const { SaucePage } = require('../pages/saucePages');
 
 /**
  * Controla qual page está ativa no cenário. O step "que estou no documento" chama ativarDocumento(),
@@ -14,6 +15,7 @@ class PageContext {
     this.activePage = new CommonsPage();
     this.pages = new Map([
       ['HOME', () => new HomePage()],
+      ['SAUCE', () => new SaucePage()],
     ]);
   }
 
