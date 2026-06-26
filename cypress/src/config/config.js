@@ -1,21 +1,19 @@
 const ambienteInfo = require('./ambienteInfo.json');
 
-const ENVIRONMENT = 'QA';
-const COMPANY_NAC_ID = 'base3';
-const COMPANY_INT_ID = 'base2';
-
-const config = {
-  environment: ENVIRONMENT,
-  companyNac:  COMPANY_NAC_ID,
-  companyInt:  COMPANY_INT_ID,
-};
+const base1 = 'base1';
+const base2 = 'base2';
 
 /** Estrutura de ambienteInfo.json: (ambiente qa/hlg) > (companyId > { baseUrl }) */
 function getAmbiente(tipoAcesso) {
-  const isBaseQA = tipoAcesso.toUpperCase() === 'QA';
-  const companyId = isBaseQA ? config.companyNac : config.companyInt;
-  const ambiente  = ambienteInfo[config.environment][companyId];
+  let companyId = null;
+
+  if (tipoAcesso === "QA" || tipoAcesso === "saucedemo") {
+    companyId = base1;
+  } else {
+    companyId = base2;
+  }
+  const ambiente  = ambienteInfo[tipoAcesso][companyId];
   return { baseUrl: ambiente.baseUrl, companyId };
 }
 
-module.exports = { config, getAmbiente };
+module.exports = { getAmbiente };

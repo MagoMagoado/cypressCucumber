@@ -8,8 +8,8 @@
     }
   },
   "saucedemo": {
-    "base3": {
-      "baseUrl": "saucedemo.com"
+    "base1": {
+      "baseUrl": "https://www.saucedemo.com"
     }
   }
 }
