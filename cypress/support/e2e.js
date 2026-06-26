@@ -15,3 +15,28 @@
 
 // Import commands.js using ES2015 syntax:
 import './commands'
+
+// Desregistra Service Workers ativos antes de cada teste para evitar timeout no cy.visit().
+// Ref: https://github.com/cypress-io/cypress/issues/27501
+beforeEach(() => {
+  cy.intercept('https://events.backtrace.io/**', { statusCode: 200, body: {} });
+
+  if (!window.navigator || !navigator.serviceWorker) {
+    console.log('[SW] navigator.serviceWorker não disponível, pulando...');
+    return null;
+  }
+  const cypressPromise = new Cypress.Promise((resolve) => {
+    navigator.serviceWorker.getRegistrations().then((registrations) => {
+      console.log(`[SW] ${registrations.length} service worker(s) encontrado(s)`);
+      if (!registrations.length) return resolve();
+      Promise.all(registrations.map(r => {
+        console.log(`[SW] Desregistrando: ${r.scope}`);
+        return r.unregister();
+      })).then(() => {
+        console.log('[SW] Todos desregistrados com sucesso');
+        resolve();
+      });
+    });
+  });
+  cy.wrap('Unregister service workers').then(() => cypressPromise);
+});
