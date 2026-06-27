@@ -35,7 +35,7 @@ Funcionalidade: Testes para CI/DI
     Então valido se "VISUALIZO" "Quantidade Produtos" com mensagem "1"
     Quando clico no botão "Menu"
     E clico no botão "Reset App"
-    Então valido se "Quantidade Produtos" está "NAO VISIVEL" dentro de "TELA"
+    Então valido se "NAO VISUALIZO" "Quantidade Produtos" dentro de "TELA"
 
   Cenário: Validações de Compra item
     Dado que estou no documento "SAUCE"

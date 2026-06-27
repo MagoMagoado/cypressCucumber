@@ -70,9 +70,9 @@ Then('valido se {string} {string} com mensagem {string}', (estado, tipo, mensage
   context.pageContext.activePage.validarMensagem(estado, tipo, mensagem);
 });
 
-Then('valido se {string} está {string} dentro de {string}', (nome, estado, container) => {
-  // estado: VISIVEL ou NAO VISIVEL / container: nome do elemento pai ou "TELA" para buscar em tudo
-  context.pageContext.activePage.validarVisibilidade(nome, estado, container);
+Then('valido se {string} {string} dentro de {string}', (estado, nome, container) => {
+  // estado: VISUALIZO ou NAO VISUALIZO / container: nome do elemento pai ou "TELA" para buscar em tudo
+  context.pageContext.activePage.validarVisibilidade(estado, nome, container);
 });
 
 Then('valido se {string} está {string}', (nome, estado) => {

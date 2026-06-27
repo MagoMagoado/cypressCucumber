@@ -180,7 +180,7 @@ class CommonsPage {
     this.toLocator(config).scrollIntoView().invoke('text').should('equal', valorEsperado);
   }
 
-  validarVisibilidade(nome, estado, container) {
+  validarVisibilidade(estado, nome, container) {
     const config = this.buscarElementoEmQualquerCategoria(nome);
     const seletor = typeof config === 'string' ? config : config.seletor;
 
