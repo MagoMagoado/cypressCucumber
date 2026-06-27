@@ -65,9 +65,14 @@ When('{string} o checkbox {string}', (acao, nome) => {
 // Validações
 // ──────────────────────────────────────────────────────────────
 
-Then('{string} {string} com a mensagem {string}', (estado, tipo, mensagem) => {
+Then('valido se {string} {string} com mensagem {string}', (estado, tipo, mensagem) => {
   // estado: VISUALIZO ou NAO VISUALIZO
   context.pageContext.activePage.validarMensagem(estado, tipo, mensagem);
+});
+
+Then('valido se {string} está {string} dentro de {string}', (nome, estado, container) => {
+  // estado: VISIVEL ou NAO VISIVEL / container: nome do elemento pai ou "TELA" para buscar em tudo
+  context.pageContext.activePage.validarVisibilidade(nome, estado, container);
 });
 
 Then('valido se {string} está {string}', (nome, estado) => {
@@ -75,26 +80,21 @@ Then('valido se {string} está {string}', (nome, estado) => {
   context.pageContext.activePage.validarEstado(nome, estado);
 });
 
-Then('valido se {string} está {string} na tela', (nome, estado) => {
-  // estado: VISIVEL ou NAO VISIVEL
-  context.pageContext.activePage.validarVisibilidade(nome, estado);
-});
-
 Then('valido se checkbox {string} está {string}', (nome, estado) => {
   // estado: MARCADO ou DESMARCADO
   context.pageContext.activePage.validarCheckboxEstado(nome, estado);
 });
 
-Then('valido que combobox {string} possui opções', (nome, dataTable) => {
+Then('valido o combobox {string} com opções', (nome, dataTable) => {
   context.pageContext.activePage.validarOpcoesCombobox(nome, dataTable.hashes());
+});
+
+Then('valido o campo {string} com valor {string}', (nome, valorEsperado) => {
+  context.pageContext.activePage.validarValorCampo(nome, valorEsperado);
 });
 
 Then('valido os campos por label', (dataTable) => {
   context.pageContext.activePage.validarCamposPorLabel(dataTable.hashes());
-});
-
-Then('o campo {string} deve conter o valor {string}', (nome, valorEsperado) => {
-  context.pageContext.activePage.validarValorCampo(nome, valorEsperado);
 });
 
 // STEP ESPECÍFICO PARA HomePage. Teste para verificar se acessa corretamente método

@@ -180,13 +180,23 @@ class CommonsPage {
     this.toLocator(config).scrollIntoView().invoke('text').should('equal', valorEsperado);
   }
 
-  validarVisibilidade(nome, estado) {
+  validarVisibilidade(nome, estado, container) {
     const config = this.buscarElementoEmQualquerCategoria(nome);
     const seletor = typeof config === 'string' ? config : config.seletor;
-    if (estado === 'VISIVEL') {
-      cy.get(seletor).should('be.visible');
+
+    let base;
+    if (!container || container === 'TELA') {
+      base = cy.get(seletor);
     } else {
-      cy.get(seletor).should('not.exist');
+      const containerConfig = this.buscarElementoEmQualquerCategoria(container);
+      const containerSeletor = typeof containerConfig === 'string' ? containerConfig : containerConfig.seletor;
+      base = cy.get(containerSeletor).find(seletor);
+    }
+
+    if (estado === 'VISIVEL') {
+      base.should('be.visible');
+    } else {
+      base.should('not.exist');
     }
   }
 
