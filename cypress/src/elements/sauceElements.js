@@ -31,8 +31,7 @@ const sauceElementos = {
     'TÍTULO':    { seletor: '.app_logo', exact: false },
     'Quantidade Produtos': '[data-test="shopping-cart-badge"]',
   },
-
-
+  
 };
 
 module.exports = { sauceElementos };

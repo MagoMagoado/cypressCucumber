@@ -7,7 +7,8 @@ const commonsElementos = {
   },
 
   CAMPO: {
-    // 'Email':                '#email',
+    'Email':                '#email',
+    'Sauce: Username': '#user-name',
     'Email':                '#user-name',
     'Password':             '#password',
     'Contact: First name':  '[data-test="first-name"]',
