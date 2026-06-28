@@ -15,20 +15,19 @@ Roda em uma máquina virtual `ubuntu-latest`.
 |---|---|
 | **Checkout** | Baixa o código do repositório na máquina do GitHub Actions |
 | **Setup Node.js** | Instala o Node.js versão 20 com cache do npm (acelera builds futuras) |
-| **Instalar dependências** | Roda `npm ci` — instala exatamente o que está no `package-lock.json` (mais rigoroso que `npm install`) |
-| **Instalar Cypress** | Baixa o binário do Cypress separadamente (necessário porque o `npm ci` só instala o pacote JS) |
-| **Executar testes** | Roda `npm test` — chama o Cypress com Cucumber |
-| **Upload relatório** | Faz upload da pasta `test-results/` como artefato chamado `cypress-report`, guardado por 15 dias |
-| **Upload screenshots** | Faz upload da pasta `cypress/screenshots`, guardado por 15 dias |
-| **Upload videos** | Faz upload da pasta `cypress/videos`, guardado por 15 dias |
+| **Executar testes + instalação** | Usa a `cypress-io/github-action@v6` — faz `npm ci`, instala o binário do Cypress e roda os testes com a flag `--env tags=not @local` (exclui testes marcados com `@local`) |
+| **Upload screenshots** | Faz upload da pasta `cypress/screenshots` em caso de falha, guardado por 15 dias |
 
 ## Artefatos
 
-Todos os artefatos usam `if: always()` — são salvos mesmo que os testes falhem — e `if-no-files-found: ignore` — não gera erro se a pasta estiver vazia (ex: nenhum teste falhou e o Cypress não gerou screenshots).
+O upload de screenshots usa `if: failure()` — só é salvo quando algum teste falha — e `if-no-files-found: ignore` — não gera erro se a pasta estiver vazia.
 
 Ficam disponíveis na aba **Actions** do repositório no GitHub para download após cada execução.
 
 | Artefato | Conteúdo |
 |---|---|
 | `cypress-screenshots` | Prints capturados automaticamente em falhas |
-| `cypress-videos` | Gravações das execuções dos testes |
+
+## Summary no GitHub Actions
+
+A `cypress-io/github-action` gera automaticamente uma seção **Cypress Run Summary** na aba **Summary** de cada execução, exibindo o total de testes passados, falhos e pulados.
