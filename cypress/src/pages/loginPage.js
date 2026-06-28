@@ -20,8 +20,8 @@ class LoginPage extends CommonsPage {
 
   efetuarLogin(usuarioId) {
     const user = getUser(usuarioId);
-    let usuarioSauce = usuarioId.toUpperCase() === 'User Sauce';
-    const email  = usuarioSauce ? 'Email' : 'Sauce: Username';
+    let usuarioSauce = usuarioId === 'User Sauce';
+    const email = usuarioSauce ? 'Sauce: Username' : 'Email';
     this.preencherCampo(email, user.username);
     this.preencherCampo('Password', user.password);
     this.clicarBotao('Login');
