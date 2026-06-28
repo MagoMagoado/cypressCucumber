@@ -53,6 +53,6 @@ Funcionalidade: Testes para CI/DI
       | Info Compra | CAMPO | Free Pony Express Delivery! |
       | Info Compra | CAMPO | Item total: $29.99          |
       | Info Compra | CAMPO | Tax: $2.40                  |
-      | Info Compra | CAMPO | Total: $0               |
+      | Info Compra | CAMPO | Total: $32.39               |
     Quando clico no botão "Finish"
     Então valido se "VISUALIZO" "SUBTÍTULO" com mensagem "Thank you for your order!"
