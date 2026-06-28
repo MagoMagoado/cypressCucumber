@@ -1,20 +1,19 @@
 const commonsElementos = {
 
   BOTAO: {
-    'Sign in':        { seletor: '[data-test="nav-sign-in"]', texto: 'Sign in', exact: true },
-    'Login':          { seletor: '[value="Login"]', texto: 'Login', exact: true },
-    'Contact: Send':  '[data-test="contact-submit"]',
+    'Sign in': { seletor: '[data-test="nav-sign-in"]', texto: 'Sign in', exact: true },
+    'Login': { seletor: '[value="Login"]', texto: 'Login', exact: true },
+    'Contact: Send': '[data-test="contact-submit"]',
   },
 
   CAMPO: {
-    'Email':                '#email',
+    'Email': '#email',
     'Sauce: Username': '#user-name',
-    'Email':                '#user-name',
-    'Password':             '#password',
-    'Contact: First name':  '[data-test="first-name"]',
-    'Contact: Last name':   '[data-test="last-name"]',
-    'Contact: Email':       '[data-test="email"]',
-    'Contact: Message':     '[data-test="message"]',
+    'Password': '#password',
+    'Contact: First name': '[data-test="first-name"]',
+    'Contact: Last name': '[data-test="last-name"]',
+    'Contact: Email': '[data-test="email"]',
+    'Contact: Message': '[data-test="message"]',
   },
 
   COMBOBOX: {
@@ -24,15 +23,15 @@ const commonsElementos = {
   CHECKBOX: {},
 
   VALIDACAO: {
-    'ALERT':     '.alert',
-    'ERRO':      '.bfm-error-message',
-    'TÍTULO':    { seletor: '.container h1', exact: false },
+    'ALERT': '.alert',
+    'ERRO': '.bfm-error-message',
+    'TÍTULO': { seletor: '.container h1', exact: false },
     'SUBTÍTULO': { seletor: 'h2', exact: false },
   },
 
   MENUS_NAVEGACAO: {
     'Menu Principal': '.navbar-nav .nav-link',
-    'Submenu':        '.dropdown-menu a',
+    'Submenu': '.dropdown-menu a',
   },
 
   ENDPOINT: {

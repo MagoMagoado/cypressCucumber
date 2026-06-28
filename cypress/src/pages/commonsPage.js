@@ -175,11 +175,6 @@ class CommonsPage {
     }
   }
 
-  validarValorCampo(nome, valorEsperado) {
-    const config = this.buscarElemento('CAMPO', nome);
-    this.toLocator(config).scrollIntoView().invoke('text').should('equal', valorEsperado);
-  }
-
   validarVisibilidade(estado, nome, container) {
     const config = this.buscarElementoEmQualquerCategoria(nome);
     const seletor = typeof config === 'string' ? config : config.seletor;
@@ -226,6 +221,11 @@ class CommonsPage {
     for (const { OPCAO } of linhas) {
       cy.contains(`${seletor} option`, OPCAO.trim()).should('exist');
     }
+  }
+
+  validarValorCampo(nome, valorEsperado) {
+    const config = this.buscarElemento('CAMPO', nome);
+    this.toLocator(config).scrollIntoView().invoke('text').should('equal', valorEsperado);
   }
 
   // elementos que repetem o mesmo seletor com textos distintos (ex: lista de produtos).
